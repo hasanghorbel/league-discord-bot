@@ -16,3 +16,4 @@ python dataset.py
 ```
 python main.py -t <your_token> -id <guild_id>
 ```
+![test](https://github.com/IsekaiCode/League-Bot/assets/109307799/141af3f7-0b37-4ab5-81da-f2169d464c00)
