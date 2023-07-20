@@ -1,6 +1,7 @@
 import argparse
 import os
 from random import randint
+from collections import defaultdict
 
 import discord
 from PIL import Image
@@ -66,7 +67,7 @@ tree = discord.app_commands.CommandTree(client)
 
 champ = ""
 start = False
-score = 0
+score = defaultdict(lambda: 0)
 index = 1
 emoji_up = '\N{THUMBS UP SIGN}'
 emoji_down = "❌"
@@ -117,9 +118,9 @@ async def on_message(message):
     if start:
         print(champ)
         if message.content == champ:
-            score += 1
+            score[message.author] += 1
             await message.add_reaction(emoji_up)
-            await message.channel.send(f"{message.author.mention} score is: {score}")
+            await message.channel.send(f"{message.author.mention} score is: {score[message.author]}")
             start = False
             index = 1
         elif message.content == "hint":
