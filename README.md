@@ -1,4 +1,4 @@
-# league-bot
+# League Discord Bot
 ## discord league of legends champions guesssing bot
 ### Install requirements with command:
 ```
